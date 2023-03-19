@@ -1,74 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Dmitrii Kotov</title>
-    <meta content='Dmitrii Kotov' name='author'>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+<head>
     <meta charset="UTF-8">
-    <link href='style.css' rel='stylesheet' type='text/css'>
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-  </head>
-  <body>
-    <a href="mailto:dk@tutunak.com?subject=We want to hire you" class='hire-me'><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;" src="hire-me@2x.png" alt="Hire Me"></a>
-    <div id="container">
-      <div class='face'></div>
-      <h1>Dmitrii Kotov</h1>
-      <div class='social'>
-        <!-- Place this tag where you want the button to render. -->
-        <ul>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer / SRE Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-        </ul></div>
-      <p class='about'>System Administrator/ DevOps Engineer and Consultant / SRE</p>
-      <section id='tech'>
-        <h2>About</h2>
-        <ul style="text-indent: 10px">
-          <li>I have a strong background in working with the Ansible automation tool, which has allowed me to
-            effectively manage and maintain infrastructure. I have experience in automating builds and deployment
-            processes using a variety of tools such as Teamcity, Jenkins, and Github Actions. This has allowed me to
-            streamline these processes and make them more efficient. In addition, I have a good understanding of
-            monitoring systems such as Zabbix, Prometheus, and Cloud Watch. I am also familiar with the Docker
-            containerization tool, which is an important technology in the field of containerization and container
-            orchestration.</li>
-          <li>I have a good amount of experience working with Linux-like operating systems such as Centos, Ubuntu, and
-            Amazon Linux. I have also worked with the Amazon Web Services (AWS) platform, which is a popular cloud
-            computing platform that offers a wide range of services and tools for building, deploying, and scaling
-            applications.
-          </li>
-          <li>In addition to my experience with Ansible and AWS, I am also experienced in Infrastructure as Code (IaC)
-            using Terraform. I also have some knowledge of AWS Cloud Development Kit (CDK), which is a software
-            development framework for defining cloud infrastructure in code. Additionally, I have strong programming
-            skills in Python which I have used to automate and streamline various processes.
-          </li>
-        </ul>
-      </section>
-      <section id='Articles'>
-        <h2>Articles</h2>
-        <ul style="text-indent: 10px">
-          <li><a href="https://dev.to/tutunak/migrate-molecule-for-ansible-pipeline-to-github-actions-from-travis-ci-e41">Migrate Molecule for Ansible pipeline from Travis.ci to Github Actions</a></li>
-        </ul>
-      </section>
-      <section id="Others">
-        <h2>Others</h2>
-        <ul style="text-indent: 10px">
-          <li>With a team took the second place in AWS GameDay:
-            <ul style="text-indent: 20px" >
-              <li id="list-style">* <a href="https://tech.liga.net/all/novosti/intervyu-s-pobeditelyami-aws-gameday---emotsii-v-onlayne">Interview (rus)</a></li>
-              <li>* <a href="1600764848908.pdf">Certificate</a></li>
-            </ul></li>
-        </ul>
-      </section>
-      <section id="links">
-        <a href="https://www.linkedin.com/in/d-kotov/"><img src="lkin.svg"/></a>
-        <a class="github-button" href="https://github.com/tutunak" aria-label="Follow @tutunak on GitHub">Follow @tutunak</a>
-      </section>
-        <div id="footer">
-                    <footer>
-        Hosted on <a href='http://pages.github.com/' target="_blank">GitHub Pages</a>
-      </footer>
-        </div>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f6f8fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            border-radius: 5px;
+            width: 60%;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin: 1em 0;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 60%;
+        }
+
+        h1, h2 {
+            font-weight: 700;
+        }
+
+        h2 {
+            border-bottom: 1px solid #e1e1e1;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        li ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        li ul li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <img src="naktu.jpg" alt="Profile Image" class="profile-img">
+    <h1>Dmitrii Kotov - DevOps Engineer / SRE</h1>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/d-kotov" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/tutunak" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:dk@tutunak.com" target="_blank"><i class="fas fa-envelope"></i></a>
     </div>
+</header>
 
-  </body>
+<section>
+    <h2>Tools & Technologies</h2>
+    <ul>
+        <li>Containers: Docker, Kubernetes, AWS ECS</li>
+        <li>CI/CD: Jenkins, GitLab CI, GitHub Actions</li>
+        <li>Configuration Management: Ansible</li>
+        <li>Version Control: Git, SVN</li>
+        <li>Cloud Platforms: AWS, Digital Ocean</li>
+        <li>Monitoring & Logging: Prometheus, Grafana, ELK Stack, Loki, Zabbix, CloudWatch, New Relic, Dynatrace</li>
+        <li>Scripting Languages: Python, Bash</li>
+        <li>IaC: Terraform, AWS CDK</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Articles & Publications</h2>
+    <ul>
+        <li><a href="https://dev.to/tutunak/migrate-molecule-for-ansible-pipeline-to-github-actions-from-travis-ci-e41">Migrate Molecule for Ansible pipeline from Travis.ci to Github Actions</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Others</h2>
+    <ul>
+        <li>With a team took the second place in AWS GameDay:
+            <ul>
+                <li><a href="https://tech.liga.net/all/novosti/intervyu-s-pobeditelyami-aws-gameday---emotsii-v-onlayne">Interview (rus)</a></li>
+                <li><a href="./1600764848908.pdf">Certificate</a></li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>Job History</h2>
+    <ul>
+        <li>DevOps Engineer, NDA (Jan 2023 - Present) - contract</li>
+        <li>DevOps Engineer, OneClick LLC (Dec 2022 - Present) - part-time</li>
+        <li>DevOps Engineer, OneClick LLC (Jun 2022 - Dec 2022) - contract</li>
+        <li>DevOps Engineer, Upteam (Jan 2022 - May 2022) - contract</li>
+        <li>Senior DevOps Engineer, Altium (May 2020 - Jan 2022) - full-time</li>
+        <li>Devops Engineer, Pixonic (Sep 2018 - May 2020) - full-time</li>
+    </ul>
+</section>
+</body>
 </html>
