@@ -10,6 +10,23 @@
         * {
             box-sizing: border-box;
         }
+        strong {
+            font-weight: 700;
+            margin-right: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        td:first-child {
+            width: 200px;
+        }
 
         body {
             font-family: 'Poppins', Arial, sans-serif;
@@ -125,17 +142,43 @@
 
 <section>
     <h2>Tools & Technologies</h2>
-    <ul>
-        <li>Containers: Docker, Kubernetes, AWS ECS</li>
-        <li>CI/CD: Jenkins, GitLab CI, GitHub Actions</li>
-        <li>Configuration Management: Ansible</li>
-        <li>Version Control: Git, SVN</li>
-        <li>Cloud Platforms: AWS, Digital Ocean</li>
-        <li>Monitoring & Logging: Prometheus, Grafana, ELK Stack, Loki, Zabbix, CloudWatch, New Relic, Dynatrace</li>
-        <li>Scripting Languages: Python, Bash</li>
-        <li>IaC: Terraform, AWS CDK</li>
-    </ul>
+    <table>
+        <tr>
+            <td><strong>Containers:</strong></td>
+            <td>Docker, Kubernetes, AWS ECS, Helm</td>
+        </tr>
+        <tr>
+            <td><strong>CI/CD Tools:</strong></td>
+            <td>Jenkins, GitLab CI, GitHub Actions</td>
+        </tr>
+        <tr>
+            <td><strong>Config Mgmt:</strong></td>
+            <td>Ansible</td>
+        </tr>
+        <tr>
+            <td><strong>Version Ctrl:</strong></td>
+            <td>Git, SVN</td>
+        </tr>
+        <tr>
+            <td><strong>Cloud Services:</strong></td>
+            <td>AWS, Digital Ocean</td>
+        </tr>
+        <tr>
+            <td><strong>Monitoring & Logging:</strong></td>
+            <td>Prometheus, Grafana, ELK, Loki, Zabbix, CloudWatch, New Relic, Dynatrace</td>
+        </tr>
+        <tr>
+            <td><strong>Scripting Langs:</strong></td>
+            <td>Python, Bash</td>
+        </tr>
+        <tr>
+            <td><strong>Infrastructure as Code:</strong></td>
+            <td>Terraform, AWS CDK</td>
+        </tr>
+    </table>
 </section>
+
+
 
 <section>
     <h2>Articles & Publications</h2>
