@@ -10,24 +10,6 @@
         * {
             box-sizing: border-box;
         }
-        strong {
-            font-weight: 700;
-            margin-right: 5px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        td {
-            padding: 5px;
-            vertical-align: top;
-        }
-
-        td:first-child {
-            width: 200px;
-        }
-
         body {
             font-family: 'Poppins', Arial, sans-serif;
             line-height: 1.6;
@@ -79,19 +61,11 @@
         ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
 
         li {
-            margin-bottom: 10px;
-        }
-
-        li ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        li ul li {
-            margin-bottom: 5px;
+            margin-bottom: 20px;
         }
 
         a {
@@ -120,11 +94,63 @@
             color: #3498db;
         }
 
+        .category-label {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .category-icon {
+            margin-right: 5px;
+        }
+
         @media screen and (min-width: 768px) {
             header,
             section {
                 width: 60%;
             }
+        }
+        .job-history {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .job-item {
+            background-color: #f6f8fa;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-item h3 {
+            margin: 0;
+            font-size: 1.25em;
+        }
+
+        .job-item h4 {
+            margin: 5px 0;
+            font-size: 1em;
+            font-weight: 500;
+            color: #3498db;
+        }
+
+        .job-item .company {
+            font-weight: 700;
+        }
+
+        .job-item .duration {
+            font-weight: 400;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        .job-item .employment-type {
+            font-size: 0.9em;
+            font-weight: 400;
+            font-style: italic;
+            color: #7f8c8d;
         }
 
     </style>
@@ -201,14 +227,66 @@
 
 <section>
     <h2>Job History</h2>
-    <ul>
-        <li>DevOps Engineer, NDA (Jan 2023 - Present) - contract</li>
-        <li>DevOps Engineer, OneClick LLC (Dec 2022 - Present) - part-time</li>
-        <li>DevOps Engineer, OneClick LLC (Jun 2022 - Dec 2022) - contract</li>
-        <li>DevOps Engineer, Upteam (Jan 2022 - May 2022) - contract</li>
-        <li>Senior DevOps Engineer, Altium (May 2020 - Jan 2022) - full-time</li>
-        <li>Devops Engineer, Pixonic (Sep 2018 - May 2020) - full-time</li>
-    </ul>
+    <div class="job-history">
+        <div class="job-item">
+            <h3>DevOps Engineer</h3>
+            <h4><span class="company">NDA</span> <span class="duration">Jan 2023 - Present</span></h4>
+            <p class="employment-type">Contract</p>
+        </div>
+        <div class="job-item">
+            <h3>DevOps Engineer</h3>
+            <h4><span class="company">OneClick LLC</span> <span class="duration">Dec 2022 - Present</span></h4>
+            <p class="employment-type">Part-time</p>
+        </div>
+        <div class="job-item">
+            <h3>DevOps Engineer</h3>
+            <h4><span class="company">OneClick LLC</span> <span class="duration">Jun 2022- Dec 2022</span></h4>
+            <p class="employment-type">contract</p>
+        </div>
+        <div class="job-item">
+            <h3>DevOps Engineer</h3>
+            <h4><span class="company">Upteam</span> <span class="duration">Jan 2022 - May 2022</span></h4>
+            <p class="employment-type">contract</p>
+        </div>
+        <div class="job-item">
+            <h3>Senior DevOps Engineer</h3>
+            <h4><span class="company">Altium</span> <span class="duration">May 2020 - Jan 2022</span></h4>
+            <p class="employment-type">full-time</p>
+        </div>
+        <div class="job-item">
+            <h3>Devops Engineer</h3>
+            <h4><span class="company">Pixonic</span> <span class="duration">Sep 2018 - May 2020</span></h4>
+            <p class="employment-type">full-time</p>
+        </div>
+    </div>
 </section>
+<!--<section>-->
+<!--    <h2>Job History</h2>-->
+<!--    <div class="job-history">-->
+<!--        <div class="job-item">-->
+<!--            <h3>DevOps Engineer</h3>-->
+<!--            <h4><span class="company">NDA</span> <span class="duration">Jan 2023 - Present</span></h4>-->
+<!--            <p class="employment-type">Contract</p>-->
+<!--            <p>Responsibilities and accomplishments:</p>-->
+<!--            <ul>-->
+<!--                <li>Implemented continuous integration and delivery pipelines</li>-->
+<!--                <li>Managed container orchestration with Kubernetes</li>-->
+<!--                &lt;!&ndash; Add more relevant points &ndash;&gt;-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <div class="job-item">-->
+<!--            <h3>DevOps Engineer</h3>-->
+<!--            <h4><span class="company">OneClick LLC</span> <span class="duration">Dec 2022 - Present</span></h4>-->
+<!--            <p class="employment-type">Part-time</p>-->
+<!--            <p>Responsibilities and accomplishments:</p>-->
+<!--            <ul>-->
+<!--                <li>Developed infrastructure as code using Terraform</li>-->
+<!--                <li>Optimized application performance with monitoring tools</li>-->
+<!--                &lt;!&ndash; Add more relevant points &ndash;&gt;-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Add more job items in the same format &ndash;&gt;-->
+<!--    </div>-->
+<!--</section>-->
 </body>
 </html>
