@@ -71,7 +71,7 @@ In that case, [Renovate](https://docs.renovatebot.com/) can help you get informa
 
 There is a good video about using renovate for that purpose:
 
-{{< youtube w7Ft2ymGmfc >}}
+{{< youtube l28pukLJvss >}}
 
 
 ## Always check the migration guide for modules and providers when updating to a major version.
