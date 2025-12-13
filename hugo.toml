@@ -1,0 +1,61 @@
+baseURL = "https://binops.dev/"
+languageCode = "en-us"
+# title = "Dmitrii Kotov - DevOps & SRE"
+theme = "PaperMod"
+pagination.pagerSize = 10
+
+# Enable these features
+enableRobotsTXT = true
+enableEmoji = true
+
+# Output formats
+[outputs]
+  home = ["HTML", "JSON"]
+
+# Menus configuration
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog"
+    weight = 2
+  
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "experience"
+    name = "Experience"
+    url = "/experience"
+    weight = 4
+  
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact"
+    weight = 5
+
+# Taxonomies
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Permalinks - URLs structure
+[permalinks]
+  blog = "/blog/:filename/"
+
+# Markup configuration
+[markup]
+  [markup.highlight]
+    style = "dracula"
+  [markup.goldmark.renderer]
+    unsafe = true

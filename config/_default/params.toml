@@ -1,0 +1,42 @@
+# Site params
+description = "DevOps Engineer, SRE, and Kubernetes Specialist based in Belgrade, Serbia"
+author = "Dmitrii Kotov"
+keywords = ["DevOps", "Kubernetes", "SRE", "Infrastructure"]
+mainSections = ["blog"]
+
+# PaperMod specific - Profile Mode (shows profile instead of posts on home)
+[profileMode]
+enabled = true
+title = "Dmitrii Kotov"
+subtitle = "DevOps Engineer | SRE Specialist | Infrastructure Automation"
+imageUrl = "/images/profile.jpg"
+imageHeight = 120
+imageTitle = ""
+
+[[profileMode.buttons]]
+name = "Blog"
+url = "/blog"
+
+[[profileMode.buttons]]
+name = "About"
+url = "/about"
+
+# Social links
+[[socialIcons]]
+name = "github"
+url = "https://github.com/tutunak"
+
+[[socialIcons]]
+name = "linkedin"
+url = "https://linkedin.com/in/d-kotov"
+
+[[socialIcons]]
+name = "email"
+url = "mailto:dk@tutunak.com"
+
+[[socialIcons]]
+name = "telegram"
+url = "https://t.me/tutunak"
+
+# Disable showing posts on homepage (use profile mode instead)
+disableSpecial1stPost = true

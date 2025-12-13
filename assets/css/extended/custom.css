@@ -1,0 +1,7 @@
+/* Fix profile image to be a perfect circle */
+.profile .profile_inner img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}

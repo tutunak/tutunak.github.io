@@ -1,0 +1,8 @@
+/resources/_gen/
+/public/
+/themes/
+.DS_Store
+*.swp
+*.swo
+*~
+.hugo_build.lock
