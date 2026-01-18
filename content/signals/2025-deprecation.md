@@ -5,6 +5,8 @@ tags: ["kaniko", "nginx", "deprecation", "devops"]
 summary: "Kaniko, NGINX Unit, Ingress-NGINX... The more operator tools you use, the more time you will spend replacing them."
 ---
 
+![Image description](/images/2o1bv12o1bv12o1b.jpg)
+
 The more operator tools you use, the more time you will spend replacing them after deprecation. Your processes might be well-optimized, but a chain of deprecations can cause you to spend time solving problems you have already solved before, and now you have to make changes that could make your system less stable than before.
 
 The year 2025 was a year of deprecation:

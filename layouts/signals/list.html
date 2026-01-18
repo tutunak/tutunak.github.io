@@ -1,0 +1,213 @@
+{{- define "main" }}
+
+{{- if not .IsHome | and .Title }}
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>
+    {{ .Title }}
+  </h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+{{- end }}
+
+{{- if .Content }}
+<div class="post-content">
+  {{ .Content }}
+</div>
+{{- end }}
+
+<style>
+.signal-feed {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.signal-entry {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  background: var(--entry);
+  transition: box-shadow 0.2s ease;
+}
+
+.signal-entry:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.signal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.signal-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--primary);
+  flex: 1;
+}
+
+.signal-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.signal-title a:hover {
+  text-decoration: underline;
+}
+
+.signal-meta {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  white-space: nowrap;
+  margin-left: 12px;
+}
+
+.signal-summary {
+  color: var(--secondary);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.signal-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+.signal-content.expanded {
+  max-height: 2000px;
+  opacity: 1;
+  transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
+}
+
+.signal-content .post-content {
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.signal-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--secondary);
+  transition: all 0.2s ease;
+}
+
+.signal-toggle:hover {
+  background: var(--code-bg);
+  color: var(--primary);
+}
+
+.signal-toggle svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.signal-toggle.expanded svg {
+  transform: rotate(180deg);
+}
+
+.signal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.signal-tag {
+  font-size: 0.75rem;
+  background: var(--code-bg);
+  color: var(--secondary);
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.signal-tag:hover {
+  color: var(--primary);
+}
+</style>
+
+<div class="signal-feed">
+{{- $pages := .RegularPages }}
+{{- range $index, $page := $pages }}
+<article class="signal-entry" id="signal-{{ $index }}">
+  <div class="signal-header">
+    <h2 class="signal-title">
+      <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+    </h2>
+    <span class="signal-meta">
+      {{- $page.Date.Format "Jan 2, 2006" -}}
+    </span>
+  </div>
+
+  {{- if $page.Params.summary }}
+  <div class="signal-summary">
+    {{ $page.Params.summary }}
+  </div>
+  {{- end }}
+
+  <button class="signal-toggle" data-index="{{ $index }}" aria-expanded="false">
+    <span class="toggle-text">Show more</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </button>
+
+  <div class="signal-content" id="signal-content-{{ $index }}">
+    <div class="post-content">
+      {{ $page.Content }}
+    </div>
+
+    {{- with $page.Params.tags }}
+    <div class="signal-tags">
+      {{- range . }}
+      <a href="{{ absURL (printf "tags/%s/" (. | urlize)) }}" class="signal-tag">#{{ . }}</a>
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+</article>
+{{- end }}
+</div>
+
+<script>
+document.querySelectorAll('.signal-toggle').forEach(function(button) {
+  button.addEventListener('click', function() {
+    var index = this.dataset.index;
+    var content = document.getElementById('signal-content-' + index);
+    var textSpan = this.querySelector('.toggle-text');
+
+    if (content.classList.contains('expanded')) {
+      content.classList.remove('expanded');
+      this.classList.remove('expanded');
+      this.setAttribute('aria-expanded', 'false');
+      textSpan.textContent = 'Show more';
+    } else {
+      content.classList.add('expanded');
+      this.classList.add('expanded');
+      this.setAttribute('aria-expanded', 'true');
+      textSpan.textContent = 'Show less';
+    }
+  });
+});
+</script>
+
+{{- end }}{{- /* end main */ -}}
