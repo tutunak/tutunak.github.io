@@ -2,6 +2,7 @@
 title: "Ephemeral Environments with Flux Operator"
 date: 2026-01-13T19:00:00+01:00
 tags: ["flux", "gitops", "gitlab", "kubernetes"]
+summary: "Flux Operator provides a native solution for ephemeral environments in GitLab. Fast setup, automatic cleanup, and simple configuration."
 layout: "signals"
 ---
 
