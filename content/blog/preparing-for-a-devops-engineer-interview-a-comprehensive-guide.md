@@ -13,6 +13,11 @@ draft: false
 
 ## Introduction
 
+<div style="background-color: var(--entry); border: 1px solid var(--border); border-left: 5px solid #ff6b6b; padding: 15px; margin: 20px 0; border-radius: 5px;">
+    <strong>🚀 DevOps changes fast. Don't memorize 2020 answers.</strong><br><br>
+    I publish weekly updates on tools, architecture patterns, and "real-world" DevOps scenarios in my <a href="/signals/"><strong>Signals</strong></a> section. Check what's relevant in 2026 before you go to your interview.
+</div>
+
 Landing a job as a DevOps engineer can be a rewarding and fulfilling experience. However, acing the interview requires thorough preparation, a deep understanding of DevOps principles, and the ability to demonstrate your technical and interpersonal skills. In this guide, we will walk you through the essential steps to prepare for a DevOps engineer interview. We will cover essential topics, provide links to resources, and share tips to help you succeed in your job search.
 
 
