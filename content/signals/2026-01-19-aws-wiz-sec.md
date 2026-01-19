@@ -1,6 +1,6 @@
 ---
 title: "AWS CodeBuild & GitHub: The 'CodeBreach' Vulnerability"
-date: 2026-01-21T17:00:00+01:00
+date: 2026-01-19T07:00:00+01:00
 tags: ["security", "aws", "github", "codebuild", "vulnerability"]
 summary: "A combination of AWS CodeBuild misconfiguration and predictable GitHub identifiers allowed admin access to the AWS GitHub account, as reported by Wiz."
 layout: "signals"
